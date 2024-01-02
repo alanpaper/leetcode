@@ -39,19 +39,20 @@ mod solve;
 // }
 
 fn main() {
-    println!("Hello, world!");
+    // println!('Hello, world!');
 
     // let larger_len = longest::length_of_longest_substring('abcadefg'.to_string());
 
     // println!('{}', larger_len);
 
     let mut board = vec![
-        vec!['O', 'X', 'O', 'O', 'X', 'X'],
-        vec!['O', 'X', 'X', 'X', 'O', 'X'],
-        vec!['X', 'O', 'O', 'X', 'O', 'O'],
-        vec!['X', 'O', 'X', 'X', 'X', 'X'],
-        vec!['O', 'O', 'X', 'O', 'X', 'X'],
-        vec!['X', 'X', 'O', 'O', 'O', 'O'],
+        vec!['X', 'O', 'X', 'O', 'O', 'O', 'O'],
+        vec!['X', 'O', 'O', 'O', 'O', 'O', 'O'],
+        vec!['X', 'O', 'O', 'O', 'O', 'X', 'O'],
+        vec!['O', 'O', 'O', 'O', 'X', 'O', 'X'],
+        vec!['O', 'X', 'O', 'O', 'O', 'O', 'O'],
+        vec!['O', 'O', 'O', 'O', 'O', 'O', 'O'],
+        vec!['O', 'X', 'O', 'O', 'O', 'O', 'O'],
     ];
 
     solve::solve(&mut board);
