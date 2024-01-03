@@ -43,8 +43,7 @@ mod get_max_repetitions;
 fn main() {
     // println!('Hello, world!');
 
-    let max =
-        get_max_repetitions::get_max_repetitions("baba".to_string(), 11, "baab".to_string(), 1);
+    get_max_repetitions::get_max_repetitions("bababababa".to_string(), 11, "baab".to_string(), 1);
 
     // let larger_len = longest::length_of_longest_substring('abcadefg'.to_string());
 

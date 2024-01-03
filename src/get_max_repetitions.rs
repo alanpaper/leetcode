@@ -1,4 +1,4 @@
-use std::collections::VecDeque;
+use std::collections::HashMap;
 /// 466. 统计重复个数
 /// 定义 str = [s, n] 表示 str 由 n 个字符串 s 连接构成。
 
@@ -26,34 +26,57 @@ pub fn get_max_repetitions(s1: String, n1: i32, s2: String, n2: i32) -> i32 {
     }
 
     let mut i_start = 0;
-    let mut i_end = 0;
+    let mut frequency = 0;
     let mut i_index: i32 = 0;
 
-    let mut s1_str = String::new();
-    for _i in 0..n1 {
-        s1_str.push_str(&s1);
-    }
-
-    let mut s2_chars = VecDeque::new();
+    let mut s2_chars: HashMap<char, i32> = HashMap::new();
     for char in s2.chars() {
-        s2_chars.push_back(char);
+        s2_chars.entry(char).or_insert(0);
     }
 
-    for (i, char) in s1_str.chars().into_iter().enumerate() {
-        if char == s2_chars[i_index.try_into().unwrap()] {
-            match s2_chars.pop_front() {
-                Some(_c) => {
-                    if i_index == 0 {
-                        i_start = i as i32;
+    loop {
+        println!("{:?}", s2_chars);
+        for (i, char) in s1.chars().into_iter().enumerate() {
+            match s2_chars.get(&char) {
+                Some(val) => {
+                    if *val == 0 {
+                      s2_chars.entry(char).or_insert(1);
+                    } else {
+                      
                     }
-                    i_index += 1;
                 }
-                None => println!("{:?}", i_index),
-            };
+                None => {
+                    continue;
+                }
+            }
+        }
+
+        if frequency < n1 {
+            frequency += 1;
+        } else {
+            break;
+        }
+
+        if s2_chars.len() == 0 {
+            break;
         }
     }
 
-    i_index - i_start
+    for (i, char) in s1.chars().into_iter().enumerate() {
+        match s2_chars.get(0) {
+            Some(c2) => {
+                if char == *c2 {
+                    i_index += i as i32 + 1;
+                    break;
+                }
+            }
+            None => {}
+        }
+    }
+
+    println!("{:?}--{:?}", i_index, i_start);
+
+    s1.len() as i32 * n1 / (i_index - i_start) / n2
 }
 
 #[test]
