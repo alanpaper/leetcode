@@ -1,6 +1,8 @@
 // use std::collections::HashMap;
 
-mod solve;
+mod get_max_repetitions;
+
+// mod solve;
 // // Define a tuple struct
 // #[derive(Debug)]
 // struct KeyPress(String, char);
@@ -41,23 +43,26 @@ mod solve;
 fn main() {
     // println!('Hello, world!');
 
+    let max =
+        get_max_repetitions::get_max_repetitions("baba".to_string(), 11, "baab".to_string(), 1);
+
     // let larger_len = longest::length_of_longest_substring('abcadefg'.to_string());
 
     // println!('{}', larger_len);
 
-    let mut board = vec![
-        vec!['X', 'O', 'X', 'O', 'O', 'O', 'O'],
-        vec!['X', 'O', 'O', 'O', 'O', 'O', 'O'],
-        vec!['X', 'O', 'O', 'O', 'O', 'X', 'O'],
-        vec!['O', 'O', 'O', 'O', 'X', 'O', 'X'],
-        vec!['O', 'X', 'O', 'O', 'O', 'O', 'O'],
-        vec!['O', 'O', 'O', 'O', 'O', 'O', 'O'],
-        vec!['O', 'X', 'O', 'O', 'O', 'O', 'O'],
-    ];
+    // let mut board = vec![
+    //     vec!['X', 'O', 'X', 'O', 'O', 'O', 'O'],
+    //     vec!['X', 'O', 'O', 'O', 'O', 'O', 'O'],
+    //     vec!['X', 'O', 'O', 'O', 'O', 'X', 'O'],
+    //     vec!['O', 'O', 'O', 'O', 'X', 'O', 'X'],
+    //     vec!['O', 'X', 'O', 'O', 'O', 'O', 'O'],
+    //     vec!['O', 'O', 'O', 'O', 'O', 'O', 'O'],
+    //     vec!['O', 'X', 'O', 'O', 'O', 'O', 'O'],
+    // ];
 
-    solve::solve(&mut board);
+    // solve::solve(&mut board);
 
-    println!("{:?}", board);
+    // println!("{:?}", board);
 
     // struct Student {  name: String, level: u8, remote: bool }
 

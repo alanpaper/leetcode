@@ -85,6 +85,8 @@ fn intersection_link_concat(link: &Link, links: &mut Vec<Link>) {
     }
 }
 
+/// 130. 被包围的区域
+/// 把被X字符包围的O字符改成X字符
 pub fn solve(board: &mut Vec<Vec<char>>) {
     let mut links: Vec<Link> = vec![];
     // 相邻的o点栈
