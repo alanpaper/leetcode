@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod pick_gifts;
+mod summary_ranges;
 
 // mod solve;
 // // Define a tuple struct
