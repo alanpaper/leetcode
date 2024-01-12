@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod summary_ranges;
+mod count_words;
 
 // mod solve;
 // // Define a tuple struct
