@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod word_subsets;
+mod count_triplets;
 
 // mod solve;
 // // Define a tuple struct
