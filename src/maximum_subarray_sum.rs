@@ -19,22 +19,17 @@ pub fn maximum_subarray_sum(nums: Vec<i32>, k: i32) -> i64 {
     let mut right_i: usize = 0;
 
     for (index, &num) in nums.iter().enumerate() {
-        println!("{:?}", screen_map);
         match screen_map.get(&(num as i64)) {
             Some(&n) => {
                 while n as i64 >= left_i as i64 {
                     total -= nums[left_i] as i64;
                     left_i += 1;
                 }
-                screen_map.insert(num as i64, index);
             }
             None => {}
         }
-
         screen_map.insert(num as i64, index);
-
         total += num as i64;
-
         if right_i - left_i + 1 == k as usize {
             if ans < total {
                 ans = total;
