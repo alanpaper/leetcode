@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod count_triplets;
+mod maximum_subarray_sum;
 
 // mod solve;
 // // Define a tuple struct
