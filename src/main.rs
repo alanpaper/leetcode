@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod maximum_subarray_sum;
+mod sum_of_number_and_reverse;
 
 // mod solve;
 // // Define a tuple struct
