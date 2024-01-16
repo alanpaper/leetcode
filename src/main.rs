@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod sum_of_number_and_reverse;
+mod sum_prefix_scores;
 
 // mod solve;
 // // Define a tuple struct
