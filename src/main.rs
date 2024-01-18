@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod sum_prefix_scores;
+mod first_complete_index;
 
 // mod solve;
 // // Define a tuple struct
