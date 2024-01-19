@@ -1,21 +1,23 @@
-use std::collections::HashMap;
-
 /// 2661.找出完整访问过一遍的行或列对应的arr下标i
 pub fn first_complete_index(arr: Vec<i32>, mat: Vec<Vec<i32>>) -> i32 {
-    let mut map_stack = HashMap::new();
-    for x in mat.iter().enumerate() {
-        for y in x.1.iter().enumerate() {
-            map_stack.insert(y.1, (x.0, y.0));
+    let mut position = vec![(0, 0); arr.len()];
+    let n = mat.len();
+    let m = mat[0].len();
+
+    for i in 0..n {
+        for j in 0..m {
+            position[(mat[i][j] - 1) as usize] = (i, j);
         }
     }
-    let mut row = vec![0; mat.len()];
-    let mut col = vec![0; mat[0].len()];
+
+    let mut col = vec![0; n];
+    let mut row = vec![0; m];
     for (i, num) in arr.iter().enumerate() {
-        if let Some(&x) = map_stack.get(&num) {
-            row[x.0] += 1;
-            col[x.1] += 1;
-            if row[x.0] == mat[0].len() || col[x.1] == mat.len() {
-              return i as i32;
+        if let Some((x, y)) = position.get((*num - 1) as usize) {
+            col[*x] += 1;
+            row[*y] += 1;
+            if col[*x] == m || row[*y] == n {
+                return i as i32;
             }
         }
     }
