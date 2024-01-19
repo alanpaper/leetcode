@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod first_complete_index;
+mod rob;
 
 // mod solve;
 // // Define a tuple struct
