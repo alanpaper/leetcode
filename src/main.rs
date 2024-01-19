@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod minimum_fuel_cost;
+mod maximum_invitations;
 
 // mod solve;
 // // Define a tuple struct
