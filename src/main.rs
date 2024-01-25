@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod find_repeated_dna_sequences;
+mod max_points;
 
 // mod solve;
 // // Define a tuple struct
