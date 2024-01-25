@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod max_points;
+mod candy;
 
 // mod solve;
 // // Define a tuple struct
