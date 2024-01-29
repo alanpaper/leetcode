@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod candy;
+mod capture_forts;
 
 // mod solve;
 // // Define a tuple struct
