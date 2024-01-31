@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod max_product;
+mod split_array;
 
 // mod solve;
 // // Define a tuple struct
