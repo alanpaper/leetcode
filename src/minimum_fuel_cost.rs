@@ -1,24 +1,22 @@
-use std::collections::BinaryHeap;
-/// 1962. 移除石子使总数最小
-pub fn min_stone_sum(piles: Vec<i32>, k: i32) -> i32 {
-    let mut heap = BinaryHeap::from(piles);
-
-    for _ in 0..k {
-        if let Some(max) = heap.pop() {
-            heap.push(max - max / 2);
-        }
-    }
-
-    heap.iter().sum()
+/// 2477. 到达首都的最少油耗
+pub fn minimum_fuel_cost(roads: Vec<Vec<i32>>, seats: i32) -> i64 {
+    0
 }
 
 #[test]
 fn _test() {
-    let roads = vec![4, 3, 6, 7];
-    assert_eq!(min_stone_sum(roads, 3), 12);
+    let roads = vec![vec![0, 1], vec![0, 2], vec![0, 3]];
+    assert_eq!(minimum_fuel_cost(roads, 5), 3);
 }
 #[test]
 fn _test_1() {
-    let roads = vec![10000];
-    assert_eq!(min_stone_sum(roads, 10000), 1);
+    let roads = vec![
+        vec![3, 1],
+        vec![3, 2],
+        vec![1, 0],
+        vec![0, 4],
+        vec![0, 5],
+        vec![4, 6],
+    ];
+    assert_eq!(minimum_fuel_cost(roads, 2), 7);
 }

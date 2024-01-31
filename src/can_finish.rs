@@ -1,47 +1,66 @@
 /// 207. 课程表
 ///
 ///
-
-fn dfs(u: i32, visited: &mut Vec<i32>, edges: &Vec<Vec<i32>>, valid: &mut bool) {
-    visited[u as usize] = 1;
-    for v in edges.get(u as usize).unwrap() {
-        match visited.get(*v as usize).unwrap() {
-            0 => dfs(*v, visited, edges, valid),
-            1 => {
-                *valid = false;
-                return;
-            }
-            _ => {}
+fn dfs(u: i32, edges: &Vec<Vec<i32>>, lines: &mut Vec<i32>) -> bool {
+    let mut ans = true;
+    lines.push(u);
+    for line in edges[u as usize].iter() {
+        if !lines.contains(line) {
+            println!("{:?}-----{:?}", line, lines);
+            return dfs(*line, edges, lines);
+        } else {
+            ans = false;
+            break;
         }
     }
-    visited[u as usize] = 1;
+    println!("{:?}=lines", lines);
+    lines.clear();
+    ans
 }
 
 pub fn can_finish(num_courses: i32, prerequisites: Vec<Vec<i32>>) -> bool {
-    let mut valid = true;
-    let mut edges: Vec<Vec<i32>> = vec![];
-    let mut visited = vec![num_courses; 0];
+    let mut edges = vec![vec![]; (num_courses + 1) as usize];
 
-    for rela in prerequisites {
-        match rela.get(1) {
-            Some(i) => edges[*i as usize].push(*rela.get(0).unwrap()),
-            None => {}
-        }
+    let mut lines = vec![];
+
+    let mut ans = true;
+    for i in prerequisites {
+        let (next, pre) = (i[0], i[1]);
+        edges[pre as usize].push(next);
     }
 
-    for i in 0..num_courses {
-        match visited.get(i as usize) {
-            Some(_num) => {}
-            None => {
-                dfs(i, &mut visited, &edges, &mut valid);
-            }
+    println!("{:?}", edges);
+
+    for i in 0..(num_courses + 1) {
+        println!("{:?}========", ans);
+        if ans {
+            ans = dfs(i, &edges, &mut lines);
         }
     }
-
-    valid
+    ans
 }
+
+// #[test]
+// fn solve_test_two() {
+//     assert_eq!(can_finish(2, vec![vec![1, 0]]), true)
+// }
+// #[test]
+// fn solve_test_three() {
+//     assert_eq!(can_finish(2, vec![vec![1, 0], vec![0, 1]]), false);
+// }
 
 #[test]
-fn solve_test_two() {
-    assert_eq!(can_finish(2, vec![vec![1, 0]]), true)
+fn solve_test_four() {
+    assert_eq!(
+        can_finish(2, vec![vec![1, 0], vec![2, 0], vec![0, 2]]),
+        false
+    );
 }
+
+// #[test]
+// fn solve_test_five() {
+//     assert_eq!(
+//         can_finish(5, vec![vec![1, 4], vec![2, 4], vec![3, 1], vec![3, 2]]),
+//         true
+//     );
+// }

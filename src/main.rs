@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod capture_forts;
+mod max_product;
 
 // mod solve;
 // // Define a tuple struct
