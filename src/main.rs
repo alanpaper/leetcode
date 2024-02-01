@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod split_array;
+mod maximum_rows;
 
 // mod solve;
 // // Define a tuple struct
