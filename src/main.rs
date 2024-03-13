@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod maximum_rows;
+mod min_path_sum;
 
 // mod solve;
 // // Define a tuple struct
