@@ -24,19 +24,12 @@ fn min_path_sum_test() {
     );
 }
 
-
 // 62. 不同路径
 pub fn unique_paths(m: i32, n: i32) -> i32 {
-
-
-
-
-  0
+    0
 }
-
-
 
 #[test]
 fn unique_paths_test() {
-  assert_eq!(unique_paths(3,7), 28);
+    assert_eq!(unique_paths(3, 7), 28);
 }

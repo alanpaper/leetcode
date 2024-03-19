@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod min_path_sum;
+mod generate_parenthesis;
 
 // mod solve;
 // // Define a tuple struct
