@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod letter_combinations;
+mod change;
 
 // mod solve;
 // // Define a tuple struct
