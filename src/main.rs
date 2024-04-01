@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod change;
+mod find_maximum_xor;
 
 // mod solve;
 // // Define a tuple struct
