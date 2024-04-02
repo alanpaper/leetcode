@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod find_maximum_xor;
+mod longest_palindrome;
 
 // mod solve;
 // // Define a tuple struct
