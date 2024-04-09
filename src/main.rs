@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod longest_palindrome;
+mod close_strings;
 
 // mod solve;
 // // Define a tuple struct
