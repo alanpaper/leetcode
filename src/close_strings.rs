@@ -43,7 +43,11 @@ pub fn close_strings(word1: String, word2: String) -> bool {
             ans = false;
         }
     }
-
+    map_1.sort();
+    map_2.sort();
+    if map_1 != map_2 {
+        ans = false
+    }
     if !ans_char {
         return false;
     }
@@ -69,5 +73,16 @@ fn test_2() {
     assert_eq!(
         close_strings(String::from("cabbba"), String::from("abbccc")),
         true
+    )
+}
+
+#[test]
+fn test_3() {
+    assert_eq!(
+        close_strings(
+            String::from("aaabbbbccddeeeeefffff"),
+            String::from("aaaaabbcccdddeeeeffff")
+        ),
+        false
     )
 }
