@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod car_pooling;
+mod max_score;
 
 // mod solve;
 // // Define a tuple struct
