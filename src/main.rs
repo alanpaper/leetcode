@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod max_score;
+mod climb_stairs;
 
 // mod solve;
 // // Define a tuple struct

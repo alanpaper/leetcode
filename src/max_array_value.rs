@@ -4,7 +4,6 @@ pub fn max_array_value(nums: Vec<i32>) -> i64 {
     let max_total = dfs(nums);
 
     fn dfs(nums: Vec<i32>) -> i64 {
-        println!("{:?}", nums);
         let mut stack = vec![];
         let mut stack_sums = vec![];
         let mut max_total: i32 = 0;
@@ -12,7 +11,7 @@ pub fn max_array_value(nums: Vec<i32>) -> i64 {
         for num in &nums {
             if stack.last() <= Some(num) && stack.len() > 0 {
                 total += *num;
-                stack.push(*num);
+            stack.push(*num);
             } else if stack.len() == 0 {
                 total += *num;
                 stack.push(*num);
@@ -28,7 +27,6 @@ pub fn max_array_value(nums: Vec<i32>) -> i64 {
         if stack.len() > 0 {
             max_total = max_total.max(stack[0]);
         }
-        println!("{:?}======", max_total);
         max_total = max_total.max(dfs(stack_sums) as i32);
         max_total as i64
     }

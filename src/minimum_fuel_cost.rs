@@ -1,5 +1,20 @@
 /// 2477. 到达首都的最少油耗
 pub fn minimum_fuel_cost(roads: Vec<Vec<i32>>, seats: i32) -> i64 {
+    let mut max_val = 0;
+    for road in &roads {
+        max_val = max_val.max(road[0].max(road[1]));
+    }
+    let mut edge = vec![vec![]; (max_val + 1) as usize];
+
+    for road in roads {
+        edge[road[0] as usize].push(road[1]);
+        edge[road[1] as usize].push(road[0]);
+    }
+
+    fn dfs() {}
+
+    println!("{:?}", edge);
+
     0
 }
 
