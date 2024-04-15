@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod climb_stairs;
+mod find_peak_element;
 
 // mod solve;
 // // Define a tuple struct
