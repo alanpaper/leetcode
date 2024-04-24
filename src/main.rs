@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod find_peak_element;
+mod max_satisfied;
 
 // mod solve;
 // // Define a tuple struct

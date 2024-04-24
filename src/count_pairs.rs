@@ -44,3 +44,20 @@ fn test_2() {
         14
     );
 }
+
+
+/// 2824. 统计和小于目标的下面对数目
+pub fn count_pairs_2824(nums: Vec<i32>, target: i32) -> i32 {
+
+    let nums_bak = nums.clone().sort();
+
+
+    
+
+
+
+
+    0
+
+
+}
