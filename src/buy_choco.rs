@@ -11,7 +11,6 @@ pub fn buy_choco(prices: Vec<i32>, money: i32) -> i32 {
 
     money
 }
-
 #[test]
 fn buy_choco_test() {
     assert_eq!(buy_choco(vec![1, 2, 2], 3), 0)
