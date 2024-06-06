@@ -83,8 +83,6 @@ fn dealwidth_ans(ans: &Vec<Vec<char>>) -> i32 {
     }
     max_queue.sort_by(|a, b| b.cmp(a));
 
-    println!("{:?}------------------------", max_queue);
-
     if max_queue.len() >= 2 {
         ans_max = ans_max.max(max_queue[1]);
     }
