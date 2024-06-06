@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod result_array;
+mod minimum_steps;
 
 // mod solve;
 // // Define a tuple struct
