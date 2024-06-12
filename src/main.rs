@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod minimum_steps;
+mod account_balance_after_purchase;
 
 // mod solve;
 // // Define a tuple struct
