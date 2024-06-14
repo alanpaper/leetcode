@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod account_balance_after_purchase;
+mod find_maximum_elegance;
 
 // mod solve;
 // // Define a tuple struct
