@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod find_maximum_elegance;
+mod max_score_2786;
 
 // mod solve;
 // // Define a tuple struct
