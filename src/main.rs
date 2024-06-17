@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod max_score_2786;
+mod find_lu_slength;
 
 // mod solve;
 // // Define a tuple struct
