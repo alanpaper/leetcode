@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod find_lu_slength;
+mod search_matrix;
 
 // mod solve;
 // // Define a tuple struct
