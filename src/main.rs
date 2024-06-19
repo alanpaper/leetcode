@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod search_matrix;
+mod max_increasing_cells;
 
 // mod solve;
 // // Define a tuple struct
