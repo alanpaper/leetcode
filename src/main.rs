@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod max_increasing_cells;
+mod maximum_swap;
 
 // mod solve;
 // // Define a tuple struct
