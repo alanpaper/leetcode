@@ -7,19 +7,16 @@
 // 一个矩阵 grid 的行 子集 ，是删除 grid 中某些（也可能不删除）行后，剩余行构成的元素集合。
 ///
 ///
-
+use std::collections::HashMap;
+#[derive(Debug)]
 struct BinaryMatrix {
-  x: usize,
-  y: usize,
-  val: i32,
-  h: Vec<i32>
+    x: usize,
+    h: Vec<i32>,
 }
 
 impl BinaryMatrix {
-    fn new(x: usize, y:usize, val: i32, h:Vec<i32>) -> Self {
-      BinaryMatrix {
-        x, y, h, val
-      }
+    fn new(x: usize, h: &Vec<i32>) -> Self {
+        BinaryMatrix { x, h: h.clone() }
     }
 }
 
@@ -32,23 +29,53 @@ pub fn good_subsetof_binary_matrix(grid: Vec<Vec<i32>>) -> Vec<i32> {
             return vec![0];
         }
     }
+    let mut map: HashMap<i32, Vec<BinaryMatrix>> = HashMap::new();
+    for x in grid.iter().enumerate() {
+        map.entry(grid[x.0][0])
+            .or_insert(Vec::new())
+            .push(BinaryMatrix::new(x.0, x.1));
+    }
 
+    let mut ans = vec![];
     for i in 0..m {
-        let line_1 = &grid[i];
-        for j in (i + 1)..m {
-            let line_2 = &grid[j];
-            if good_subsetof_binary(line_1, line_2) {
-                return vec![i as i32, j as i32];
+        if grid[i][0] == 1 {
+            if let Some(bm) = map.get(&0) {
+                ans = subsetof_binary(bm, &grid, i);
+                if !ans.is_empty() {
+                    return ans;
+                }
             }
         }
+        if grid[i][0] == 0 {
+            if let Some(bm) = map.get(&0) {
+                ans = subsetof_binary(bm, &grid, i);
+                if !ans.is_empty() {
+                    return ans;
+                }
+            }
+            if let Some(bm) = map.get(&1) {
+                ans = subsetof_binary(bm, &grid, i);
+                if !ans.is_empty() {
+                    return ans;
+                }
+            }
+        }
+
     }
     return vec![];
 }
 
-
-10 11 12 12 
- 0  0  0  0
-
+fn subsetof_binary(bm: &Vec<BinaryMatrix>, grid: &Vec<Vec<i32>>, index: usize) -> Vec<i32> {
+    for b in bm {
+        if good_subsetof_binary(&grid[index], &b.h) {
+            if index == b.x {
+                return vec![index as i32];
+            }
+            return vec![index as i32, b.x as i32];
+        }
+    }
+    return vec![];
+}
 
 fn good_subsetof_binary(h1: &Vec<i32>, h2: &Vec<i32>) -> bool {
     let len = h1.len();
@@ -56,6 +83,7 @@ fn good_subsetof_binary(h1: &Vec<i32>, h2: &Vec<i32>) -> bool {
     for i in 0..len {
         if h1[i] + h2[i] > 1 {
             ans = false;
+            break;
         }
     }
     ans
@@ -82,5 +110,5 @@ fn test_2() {
 #[test]
 fn test_3() {
     let grid = vec![vec![0, 0], vec![1, 1], vec![1, 0], vec![1, 0]];
-    assert_eq!(good_subsetof_binary_matrix(grid), vec![])
+    assert_eq!(good_subsetof_binary_matrix(grid), vec![0])
 }
