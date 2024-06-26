@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod good_subsetof_binary_matrix;
+mod special_perm;
 
 // mod solve;
 // // Define a tuple struct
