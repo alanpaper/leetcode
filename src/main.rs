@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod maximum_swap;
+mod good_subsetof_binary_matrix;
 
 // mod solve;
 // // Define a tuple struct
