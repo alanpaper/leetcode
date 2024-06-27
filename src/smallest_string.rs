@@ -8,33 +8,29 @@
 /// 如果  x[i] 在字母表中先于 y[i] 出现，则认为字符串 x 比字符串 y 字典序更小 。
 
 pub fn smallest_string(s: String) -> String {
-    let mut left = -1;
-    let mut right = -1;
-    for c in s.chars().enumerate() {
-        if c.1 != 'a' && left == -1 {
-            left = c.0 as i32;
-            continue;
-        }
-        if c.1 == 'a' && left != -1 && right == -1 {
-            right = (c.0 - 1) as i32;
-            break;
+    let mut str = s.into_bytes();
+    let len = str.len();
+    for i in 0..len {
+        if str[i] > b'a' {
+            for j in i..len {
+                if str[j] > b'a' {
+                    str[j] = str[j] - 1;
+                } else {
+                    break;
+                }
+            }
+            return unsafe { String::from_utf8_unchecked(str) };
         }
     }
-
-    if left == -1 && right == -1 {
-        return format!("{}z", &s[0..s.len() - 1]);
-    }
-
-    println!("{:?}=={:?}", left, right);
-
-    String::new()
+    str[len - 1] = b'z';
+    return unsafe { String::from_utf8_unchecked(str) };
 }
 
 #[test]
 fn test_0() {
     assert_eq!(
         smallest_string(String::from("aaaaaa")),
-        String::from("abaab")
+        String::from("aaaaaz")
     )
 }
 
