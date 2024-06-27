@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod special_perm;
+mod smallest_string;
 
 // mod solve;
 // // Define a tuple struct
