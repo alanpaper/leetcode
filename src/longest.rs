@@ -18,7 +18,6 @@ pub fn length_of_longest_substring(s: String) -> i32 {
     let mut left = -1;
     let mut ans = 0;
     for (i, v) in s.chars().enumerate() {
-        println!("{:?}--{:?}", left, ans);
         left = left.max(last[v as usize]);
         last[v as usize] = i as i32;
         ans = ans.max((i as i32) - left);
