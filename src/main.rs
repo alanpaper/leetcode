@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod paint_walls;
+mod distinct_difference_array;
 
 // mod solve;
 // // Define a tuple struct
