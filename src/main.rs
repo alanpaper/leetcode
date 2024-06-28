@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod minimum_seconds;
+mod paint_walls;
 
 // mod solve;
 // // Define a tuple struct
