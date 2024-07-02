@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod distinct_difference_array;
+mod maximum_prime_difference;
 
 // mod solve;
 // // Define a tuple struct
