@@ -16,6 +16,7 @@ pub fn max_result(mut nums: Vec<i32>, k: i32) -> i32 {
         if *q.front().unwrap() + k < i {
             q.pop_front();
         }
+
         // 2. 转移
         nums[i] += nums[*q.front().unwrap()];
         // 3. 入
@@ -51,5 +52,5 @@ fn test_4() {
 
 #[test]
 fn test_5() {
-    assert_eq!(max_result(vec![0, -1, -2, -3, 1], 2), -1);
+    assert_eq!(max_result(vec![0, -1, -2, -3, 1], 2), -2);
 }
