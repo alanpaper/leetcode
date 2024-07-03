@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod can_win_nim;
+mod max_result;
 
 // mod solve;
 // // Define a tuple struct
