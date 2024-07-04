@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod magic_tower;
+mod replace_value_in_tree;
 
 // mod solve;
 // // Define a tuple struct
