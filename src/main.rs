@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod pivot_index;
+mod check_move;
 
 // mod solve;
 // // Define a tuple struct

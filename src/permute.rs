@@ -13,8 +13,3 @@ fn test_1() {
 fn test_2() {
     assert_eq!(permute(vec![1]), vec![vec![1]])
 }
-
-[1 2 3 4 5]
-[5 1 2 3 4]
-[1 2 3 4]
-[4 1 2 3]
