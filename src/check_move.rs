@@ -11,7 +11,18 @@ pub fn check_move(board: Vec<Vec<char>>, r_move: i32, c_move: i32, color: char) 
         (-1, -1),
     ];
 
-    for n in list {}
+    for n in list {
+
+        let mut queue = vec![];
+
+        let mut r_index = r_move;
+        let mut c_index = c_move;
+        while r_index
+
+
+
+
+    }
 
     false
 }
