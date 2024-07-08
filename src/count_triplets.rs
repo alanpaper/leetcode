@@ -6,7 +6,6 @@
 /// 0 <= k < nums.length
 /// nums[i] & nums[j] & nums[k] == 0 ，其中 & 表示按位与运算符。
 ///
-
 pub fn count_triplets(nums: Vec<i32>) -> i32 {
     let mut total = 0;
     for i in nums.iter().enumerate() {
@@ -18,7 +17,6 @@ pub fn count_triplets(nums: Vec<i32>) -> i32 {
             }
         }
     }
-
     total
 }
 
