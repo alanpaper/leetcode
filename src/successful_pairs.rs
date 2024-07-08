@@ -1,5 +1,4 @@
 /// 2300. 咒语和药水的成功对数
-
 pub fn successful_pairs(spells: Vec<i32>, potions: Vec<i32>, success: i64) -> Vec<i32> {
     let mut potions_ans = potions.clone();
     potions_ans.sort();

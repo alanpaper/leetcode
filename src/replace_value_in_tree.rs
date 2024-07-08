@@ -1,5 +1,5 @@
 use std::cell::RefCell;
-use std::collections::HashMap;
+use std::collections::VecDeque;
 use std::rc::Rc;
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
@@ -20,13 +20,27 @@ impl TreeNode {
 }
 
 pub fn replace_value_in_tree(root: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
-    let mut map = HashMap::new();
+    let mut ans = vec![];
+    println!("{:?}", ans);
+
+    Some(Rc::new(RefCell::new(TreeNode {
+        val: todo!(),
+        left: todo!(),
+        right: todo!(),
+    })))
 }
 
-fn grandfather(node: Option<Rc<RefCell<TreeNode>>>, map: HashMap<i32, (i32, i32)>) {
-    if let Some(n) = node {
-        if let Some(f) = n.borrow().left {
-            s.borrow().left
+fn bfs(root: Option<Rc<RefCell<TreeNode>>>) {
+    let mut queue = VecDeque::new();
+    queue.push_back(root);
+
+
+    while !queue.is_empty() {
+        if let Some(node) = queue.pop_front() {
+            if let Some(n) = node {
+                
+            }
         }
     }
+
 }

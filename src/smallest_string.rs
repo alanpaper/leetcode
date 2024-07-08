@@ -6,7 +6,6 @@
 // 子字符串 是字符串中的一个连续字符序列。
 // 现有长度相同的两个字符串 x 和 字符串 y ，在满足 x[i] != y[i] 的第一个位置 i 上，
 /// 如果  x[i] 在字母表中先于 y[i] 出现，则认为字符串 x 比字符串 y 字典序更小 。
-
 pub fn smallest_string(s: String) -> String {
     let mut str = s.into_bytes();
     let len = str.len();
