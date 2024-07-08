@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod count_alternating_subarrays;
+mod modified_matrix;
 
 // mod solve;
 // // Define a tuple struct
