@@ -8,8 +8,6 @@ pub fn distribute_candies(candies: i32, num_people: i32) -> Vec<i32> {
     let mut index = 0;
 
     while candies_new > 0 {
-        println!("{:?}", n);
-
         if index < num_people {
             if candies_new >= n + 1 {
                 candies_new -= n + 1;

@@ -8,7 +8,6 @@ use std::collections::{HashMap, HashSet};
 /// 返回 nums 的 不同元素数目差 数组。
 /// 注意 nums[i, ..., j] 表示 nums 的一个从下标 i 开始到下标 j 结束的子数组（包含下标 i 和 j 对应元素）。
 /// 特别需要说明的是，如果 i > j ，则 nums[i, ..., j] 表示一个空子数组。
-
 pub fn distinct_difference_array(nums: Vec<i32>) -> Vec<i32> {
     let mut map = HashMap::new();
     let mut set = HashSet::new();

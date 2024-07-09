@@ -15,7 +15,6 @@ impl Solution {
                 curr_len = 1;
             }
         }
-
         max_len
     }
 }
