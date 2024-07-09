@@ -1,7 +1,6 @@
 /// 70. 爬楼梯
 ///
 /// 1 2 3 4
-
 pub fn climb_stairs(n: i32) -> i32 {
     let mut ans_stack = vec![0; (n + 1) as usize];
     ans_stack[0] = 1;

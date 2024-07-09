@@ -1,5 +1,3 @@
-
-
 /// 82. 删除排序链表中的重复元素 II
 /// 给定一个已排序的链表的头 head ， 删除原始链表中所有重复数字的节点，只留下不同的数字 。返回 已排序的链表。
 ///
@@ -17,22 +15,19 @@ impl ListNode {
     }
 }
 pub fn delete_duplicates(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
-
-  let mut tmp = ListNode::new(0);
-  let mut last = None;
-  let mut head = head;
-  let mut r = &mut tmp.next;
-
-  while let Some(mut x) = head {
-    head = x.next.take();
-    let t = x.val;
-    if Some(t) != last && head.as_ref().map_or(true, |y| y.val != t) {
-      r = &mut r.get_or_insert(x).next;
+    let mut tmp = ListNode::new(0);
+    let mut last = None;
+    let mut head = head;
+    let mut r = &mut tmp.next;
+    while let Some(mut x) = head {
+        head = x.next.take();
+        let t = x.val;
+        if Some(t) != last && head.as_ref().map_or(true, |y| y.val != t) {
+            r = &mut r.get_or_insert(x).next;
+        }
+        last = Some(t);
     }
-    last = Some(t);
-  }
-
-  tmp.next
+    tmp.next
 }
 
 #[test]

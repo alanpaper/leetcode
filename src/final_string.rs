@@ -1,5 +1,4 @@
 /// 2810.故障键盘
-
 pub fn final_string(s: String) -> String {
     let mut stack = vec![];
 

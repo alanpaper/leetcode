@@ -1,5 +1,4 @@
 /// 421.数组中的两个树的最大异或值
-
 pub fn find_maximum_xor(nums: Vec<i32>) -> i32 {
     let mut ans = 0;
     for x in 0..(nums.len() - 1) {
