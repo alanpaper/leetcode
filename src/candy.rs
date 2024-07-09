@@ -1,5 +1,4 @@
 /// 135. 分发糖果
-
 pub fn candy(ratings: Vec<i32>) -> i32 {
     let mut candys = vec![1; ratings.len()];
 

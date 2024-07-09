@@ -2,7 +2,6 @@
 /// 给你一个二进制数组nums 。
 // 如果一个子数组中 不存在 两个 相邻 元素的值 相同 的情况，我们称这样的子数组为 交替子数组 。
 // 返回数组 nums 中交替子数组的数量。
-
 pub fn count_alternating_subarrays(nums: Vec<i32>) -> i64 {
     let mut total = nums.len();
     let mut pre = nums[0];

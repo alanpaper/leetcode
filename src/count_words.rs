@@ -1,8 +1,6 @@
 use std::collections::HashMap;
 
 /// 2085. 统计出现过一次的公共字符串
-///
-
 pub fn count_words(words1: Vec<&str>, words2: Vec<&str>) -> i32 {
     let mut map1 = HashMap::new();
     let mut map2 = HashMap::new();

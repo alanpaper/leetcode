@@ -10,7 +10,6 @@
 
 // 输入: strs = ["aaa","aaa","aa"]
 // 输出: -1
-
 pub fn find_lu_slength(strs: Vec<String>) -> i32 {
     let mut ans = -1;
     for i in 0..strs.len() {
