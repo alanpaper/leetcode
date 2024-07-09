@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod can_place_flowers;
+mod single_number;
 
 // mod solve;
 // // Define a tuple struct

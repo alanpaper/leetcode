@@ -1,6 +1,4 @@
 /// 207. 课程表
-///
-///
 fn dfs(u: i32, edges: &Vec<Vec<i32>>, lines: &mut Vec<i32>) -> bool {
     let mut ans = true;
     lines.push(u);

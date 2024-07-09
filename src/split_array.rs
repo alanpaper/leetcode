@@ -1,6 +1,4 @@
 /// 410. 分割数组的最大值
-///
-
 pub fn split_array(nums: Vec<i32>, k: i32) -> i32 {
     let mut low: i32 = *nums.iter().max().unwrap();
     let mut high: i32 = nums.iter().sum();

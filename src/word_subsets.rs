@@ -1,8 +1,5 @@
 use std::collections::HashMap;
-
 /// 916. 单词子集
-///
-
 pub fn word_subsets<'a>(words1: Vec<String>, words2: Vec<String>) -> Vec<String> {
     let mut stack = vec![];
     let word2_map = word2_merge(words2);
