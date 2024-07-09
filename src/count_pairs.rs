@@ -1,5 +1,4 @@
 /// 2316.统计无向图中无法互相到达点对数
-
 pub fn count_pairs(n: i32, edges: Vec<Vec<i32>>) -> i64 {
     let mut table = vec![vec![]; n as usize];
 
@@ -8,15 +7,11 @@ pub fn count_pairs(n: i32, edges: Vec<Vec<i32>>) -> i64 {
         table[x as usize].push(y);
     }
 
-    println!("{:?}====table", table);
-
     let mut table_link = vec![vec![]; n as usize];
 
     for i in 0..n {
         dfs(i, i, &table, &mut table_link);
     }
-
-    println!("{:?}====", table_link);
 
     0
 }
@@ -45,19 +40,9 @@ fn test_2() {
     );
 }
 
-
 /// 2824. 统计和小于目标的下面对数目
 pub fn count_pairs_2824(nums: Vec<i32>, target: i32) -> i32 {
-
     let nums_bak = nums.clone().sort();
 
-
-    
-
-
-
-
     0
-
-
 }

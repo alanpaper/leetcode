@@ -3,17 +3,18 @@
 /// 给你一个整数数组 flowerbed 表示花坛，由若干 0 和 1 组成，其中 0 表示没种植花，1 表示种植了花。另有一个数 n ，
 /// 能否在不打破种植规则的情况下种入 n 朵花？能则返回 true ，不能则返回 false 。
 pub fn can_place_flowers(flowerbed: Vec<i32>, n: i32) -> bool {
-    let mut flower_num = n;
-    let mut index = -1;
-
-    loop {
-
-
-      
-        index += 1;
+    let mut list = flowerbed.clone();
+    let mut pre = -1;
+    list.push(-1);
+    let mut ans: i32 = 0;
+    for i in 0..(list.len() - 1) {
+        if list[i] == 0 && pre <= 0 && list[i + 1] <= 0 {
+            ans += 1;
+            list[i] = 1;
+        }
+        pre = list[i];
     }
-
-    flower_num == 0
+    ans >= n
 }
 
 #[test]

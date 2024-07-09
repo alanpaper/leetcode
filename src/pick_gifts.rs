@@ -1,5 +1,4 @@
 use std::collections::BinaryHeap;
-
 /// 2558. 从数量最多的堆取走礼物
 /// 题解
 /// 最大堆
