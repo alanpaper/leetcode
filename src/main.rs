@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod single_number;
+mod incremovable_subarray_count;
 
 // mod solve;
 // // Define a tuple struct
