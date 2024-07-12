@@ -1,6 +1,6 @@
 // use std::collections::HashMap;
 
-mod incremovable_subarray_count;
+mod number_game;
 
 // mod solve;
 // // Define a tuple struct
