@@ -1,5 +1,4 @@
 /// 2789. 合并后数组中的最大元素
-
 pub fn max_array_value(nums: Vec<i32>) -> i64 {
     let max_total = dfs(nums);
 
@@ -11,7 +10,7 @@ pub fn max_array_value(nums: Vec<i32>) -> i64 {
         for num in &nums {
             if stack.last() <= Some(num) && stack.len() > 0 {
                 total += *num;
-            stack.push(*num);
+                stack.push(*num);
             } else if stack.len() == 0 {
                 total += *num;
                 stack.push(*num);
