@@ -3,8 +3,10 @@
 /// 一次 操作 中，如果两个 相邻 元素在二进制下数位为 1 的数目 相同 ，
 /// 那么你可以将这两个元素交换。你可以执行这个操作 任意次 （也可以 0 次）。
 /// 如果你可以使数组变有序，请你返回 true，否则返回 false。
-pub fn can_sort_array(nums: Vec<i32>) -> bool {
-    false
+pub fn can_sort_array(mut nums: Vec<i32>) -> bool {
+    nums.chunk_by_mut(|a, b| a.count_ones() == b.count_ones())
+        .for_each(|chunk| chunk.sort_unstable());
+    nums.windows(2).all(|w| w[1] >= w[0])
 }
 
 #[test]
