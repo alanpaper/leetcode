@@ -1,3 +1,4 @@
+use std::collections::{HashMap, HashSet};
 /// 721. 账户合并
 /// 给定一个列表 accounts，每个元素 accounts[i] 是一个字符串列表，
 /// 其中第一个元素 accounts[i][0] 是 名称 (name)，其余元素是 emails 表示该账户的邮箱地址。
@@ -8,4 +9,33 @@
 /// 账户本身可以以 任意顺序 返回。
 pub fn accounts_merge(accounts: Vec<Vec<String>>) -> Vec<Vec<String>> {
     vec![]
+}
+
+#[test]
+fn test_1() {
+    let accounts = vec![
+        vec![
+            "John".to_string(),
+            "johnsmith@mail.com".to_string(),
+            "john00@mail.com".to_string(),
+        ],
+        vec!["John".to_string(), "johnnybravo@mail.com".to_string()],
+        vec![
+            "John".to_string(),
+            "johnsmith@mail.com".to_string(),
+            "john_newyork@mail.com".to_string(),
+        ],
+        vec!["Mary".to_string(), "mary@mail.com".to_string()],
+    ];
+    let ans = vec![
+        vec![
+            "John".to_string(),
+            "john00@mail.com".to_string(),
+            "john_newyork@mail.com".to_string(),
+            "johnsmith@mail.com".to_string(),
+        ],
+        vec!["John".to_string(), "johnnybravo@mail.com".to_string()],
+        vec!["Mary".to_string(), "mary@mail.com".to_string()],
+    ];
+    assert_eq!(accounts_merge(accounts.clone()), ans);
 }
