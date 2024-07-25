@@ -1,6 +1,16 @@
 /// 46. 全排列
 pub fn permute(nums: Vec<i32>) -> Vec<Vec<i32>> {
-    // !TODO
+
+    let mut total = 0;
+    for i in 1..=nums.len() {
+        total *= i;
+    }
+
+    while total > 0 {
+        let mut middle = vec![0; nums.len()];
+        total -= 1;
+    }
+
     vec![vec![]]
 }
 
