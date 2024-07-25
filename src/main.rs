@@ -1,7 +1,7 @@
 // use std::collections::HashMap;
 mod tree_node;
 
-mod relocate_marbles;
+mod maximum_detonation;
 
 // mod solve;
 // // Define a tuple struct
