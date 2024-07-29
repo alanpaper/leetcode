@@ -1,14 +1,35 @@
+use std::collections::{HashMap, HashSet, VecDeque};
+
 /// 2368. 受限条件下可到达节点的数目
 ///
 pub fn reachable_nodes(n: i32, edges: Vec<Vec<i32>>, restricted: Vec<i32>) -> i32 {
-    let mut g = vec![vec![]; n as usize];
-
-    for node in edges {
-        g[node[0] as usize].push(node[1]);
-        g[node[1] as usize].push(node[0]);
+    let mut res_map = HashMap::new();
+    let mut res_set = HashSet::new();
+    let mut aleady_set = HashSet::new();
+    for r in restricted {
+        res_set.insert(r);
     }
-
-    0
+    for node in edges {
+        res_map.entry(node[0]).or_insert(Vec::new()).push(node[1]);
+        res_map.entry(node[1]).or_insert(Vec::new()).push(node[0]);
+    }
+    let mut queue = VecDeque::new();
+    queue.push_back(0);
+    let mut ans: i32 = 0;
+    while !queue.is_empty() {
+        if let Some(node) = queue.pop_front() {
+            aleady_set.insert(node);
+            ans += 1;
+            if let Some(x) = res_map.get(&node) {
+                for n in x {
+                    if !res_set.contains(&n) && !aleady_set.contains(&n) {
+                        queue.push_back(*n);
+                    }
+                }
+            }
+        }
+    }
+    ans
 }
 
 //       - 7     - 2
