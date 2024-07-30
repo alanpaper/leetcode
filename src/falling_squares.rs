@@ -22,7 +22,6 @@ pub fn falling_squares(positions: Vec<Vec<i32>>) -> Vec<i32> {
         for i in 0..h {
             let index = (x1 + i + 1) as usize;
             ans[index] = height;
-
         }
         max = max.max(height);
         res.push(max);
@@ -53,5 +52,3 @@ fn test4() {
     let positions = vec![vec![9, 7], vec![1, 9], vec![3, 1]];
     assert_eq!(falling_squares(positions), vec![7, 16, 17]);
 }
-
-
