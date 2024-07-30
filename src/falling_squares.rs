@@ -29,22 +29,33 @@ pub fn falling_squares(positions: Vec<Vec<i32>>) -> Vec<i32> {
             height = p[1].max(height);
         } else {
             for m in height_map.clone().into_iter() {
+                println!("position0 = {:?}\n m.0 = {:?}", position, &m.0);
                 if m.0.x2 <= position.clone().x1 || position.clone().x2 <= m.0.x1 {
                     height_map.entry(position.clone()).or_insert(p[1]);
                     height = p[1].max(height);
                 } else {
-                    height_map.remove(&m.0);
                     let h = p[1] + m.1;
                     height = h.max(height);
-                    if m.0.x1 >= position.clone().x1 || position.clone().x2 >= m.0.x2 {
+                    if position.clone().x2 <= m.0.x1 || position.clone().x2 >= m.0.x2 {
                         height_map.entry(position).or_insert(h);
-                    } else if m.0.x1 > position.clone().x1 || position.clone().x2 < m.0.x2 {
+                    } else if m.0.x1 > position.clone().x1 && position.clone().x2 > m.0.x2 {
+                        height_map.entry(position.clone()).or_insert(h);
+                    } else if m.0.x1 < position.clone().x1 && position.clone().x2 < m.0.x2 {
                         height_map
                             .entry(Position {
-                                x1: position.clone().x1,
-                                x2: m.0.x1,
+                                x1: m.0.x1,
+                                x2: position.clone().x1,
                             })
-                            .or_insert(h);
+                            .or_insert(m.1);
+                        height_map.entry(position.clone()).or_insert(h);
+                        height_map
+                            .entry(Position {
+                                x1: position.clone().x2,
+                                x2: m.0.x2,
+                            })
+                            .or_insert(m.1);
+                    } else if m.0.x1 > position.clone().x1 && position.clone().x2 < m.0.x2 {
+                        height_map.entry(position.clone()).or_insert(h);
                         height_map
                             .entry(Position {
                                 x1: position.clone().x2,
@@ -52,23 +63,19 @@ pub fn falling_squares(positions: Vec<Vec<i32>>) -> Vec<i32> {
                             })
                             .or_insert(m.1);
                     } else {
+                        height_map.entry(position.clone()).or_insert(h);
                         height_map
                             .entry(Position {
                                 x1: m.0.x1,
                                 x2: position.clone().x1,
                             })
                             .or_insert(m.1);
-                        height_map
-                            .entry(Position {
-                                x1: m.0.x2,
-                                x2: position.clone().x2,
-                            })
-                            .or_insert(h);
                     }
+                    height_map.remove(&m.0);
                 }
             }
         }
-        println!("{:?}", height_map);
+        println!("{:?} \n", height_map);
         ans.push(height);
     }
 
@@ -90,11 +97,13 @@ fn test2() {
 #[test]
 fn test3() {
     let positions = vec![vec![9, 10], vec![4, 1], vec![2, 1], vec![7, 4], vec![6, 10]];
-    assert_eq!(falling_squares(positions), vec![10, 10, 10, 14, 24]);
+    assert_eq!(falling_squares(positions), vec![10, 10, 10, 14, 25]);
 }
 
 // 9 19  10
 // 4 5 1  10
 // 2 3 1  10
-// 7 11 4  14
+// 7 11 14
+// 11 19 10
+
 // 6 16 10 24
