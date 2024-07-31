@@ -7,22 +7,6 @@ use std::collections::HashSet;
 ///
 pub fn three_sum(nums: Vec<i32>) -> Vec<Vec<i32>> {
     let mut ans = vec![];
-    for i in 0..nums.len() {
-        for j in (i + 1)..nums.len() {
-            let mut num_k = None;
-            for k in (j + 1)..nums.len() {
-                if let Some(n_k) = num_k {
-                    if n_k == nums[k] {
-                        continue;
-                    }
-                }
-                if i != j && i != k && j != k && nums[i] + nums[j] + nums[k] == 0 {
-                    num_k = Some(nums[k]);
-                    ans.push(vec![nums[i], nums[j], nums[k]]);
-                }
-            }
-        }
-    }
     ans
 }
 
