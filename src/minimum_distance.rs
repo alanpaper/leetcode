@@ -5,7 +5,6 @@
 // 请你恰好移除一个点，返回移除后任意两点之间的 最大 距离可能的 最小 值。
 pub fn minimum_distance(points: Vec<Vec<i32>>) -> i32 {
     let mut points_map = points.clone();
-
     0
 }
 

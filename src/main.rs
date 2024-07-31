@@ -1,7 +1,7 @@
 // use std::collections::HashMap;
 mod tree_node;
 
-mod min_rectangles_to_cover_points;
+mod three_sum;
 
 // mod solve;
 // // Define a tuple struct
