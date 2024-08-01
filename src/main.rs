@@ -1,7 +1,7 @@
 // use std::collections::HashMap;
 mod tree_node;
 
-mod three_sum;
+mod maxmium_score;
 
 // mod solve;
 // // Define a tuple struct
