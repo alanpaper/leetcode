@@ -1,7 +1,7 @@
 // use std::collections::HashMap;
 mod tree_node;
 
-mod combination_sum4;
+mod is_array_special;
 
 // mod solve;
 // // Define a tuple struct
