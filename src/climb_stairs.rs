@@ -8,9 +8,7 @@ pub fn climb_stairs(n: i32) -> i32 {
     for num in 2..(n + 1) {
         ans_stack[num as usize] = ans_stack[(num - 2) as usize] + ans_stack[(num - 1) as usize]
     }
-
     println!("{:?}", ans_stack);
-
     ans_stack.pop().unwrap()
 }
 
