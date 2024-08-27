@@ -1,7 +1,7 @@
 // use std::collections::HashMap;
 mod tree_node;
 
-mod is_array_special;
+mod check_record;
 
 // mod solve;
 // // Define a tuple struct
