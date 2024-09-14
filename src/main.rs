@@ -1,7 +1,7 @@
 // use std::collections::HashMap;
 mod tree_node;
 
-mod merge_nodes;
+mod remove_stars;
 
 // mod solve;
 // // Define a tuple struct
