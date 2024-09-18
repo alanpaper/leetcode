@@ -1,4 +1,4 @@
-use std::collections::{HashMap, HashSet, VecDeque};
+use std::collections::VecDeque;
 
 /// 2332. 坐上公交的最晚时间
 ///
@@ -17,36 +17,50 @@ pub fn latest_time_catch_the_bus(buses: Vec<i32>, passengers: Vec<i32>, capacity
     let mut passengers = passengers.clone();
     passengers.sort();
     let mut vp = VecDeque::from(passengers.clone());
-    let mut total = 0;
-    let mut map = HashMap::new();
+    let mut map = vec![];
+    let mut next = None;
     for b in 0..buses.len() {
-        let mut mid = 0;
+        let mut mid = vec![];
+        if let Some(n) = next {
+            mid.push(n);
+        }
         for _ in 0..capacity {
             if let Some(v) = vp.pop_front() {
-                if v <= buses[b] {
-                    total += 1;
-                    mid += 1;
+                if v <= buses[b] && mid.len() < capacity as usize {
+                    mid.push(v);
                 } else {
+                    next = Some(v);
                     break;
                 }
             }
         }
-        map.insert(b, mid);
+        map.push(mid);
     }
 
-    let mut max_bus_time = passengers[total - 1];
-    if let Some(x) = map.get(&(buses.len() - 1)) {
-        if *x <= capacity {
-            max_bus_time = *buses.last().unwrap();
+    let last_buses = map.last().unwrap();
+
+    println!("{:?}", map);
+    println!("{:?}", last_buses);
+
+    if !last_buses.is_empty() {
+        let mut last_value = 0;
+        if let Some(l) = last_buses.last() {
+            last_value = *l;
         }
-    }
-    let mut ans = 0;
-    for i in 0..max_bus_time {
-        if !passengers.contains(&i) {
-            ans = i;
+        if last_buses.len() < capacity as usize {
+            last_value = *buses.last().unwrap();
         }
+
+        let mut max = 0;
+        for i in 0..(last_value + 1) {
+            if !passengers.contains(&i) {
+                max = max.max(i);
+            }
+        }
+        return max;
+    } else {
+        return *buses.last().unwrap();
     }
-    ans
 }
 
 #[test]
@@ -71,4 +85,36 @@ fn test_3() {
     let passengers = vec![2, 4];
     let capacity = 2;
     assert_eq!(latest_time_catch_the_bus(buses, passengers, capacity), 3);
+}
+
+#[test]
+fn test_4() {
+    let buses = vec![2];
+    let passengers = vec![2];
+    let capacity = 2;
+    assert_eq!(latest_time_catch_the_bus(buses, passengers, capacity), 1);
+}
+
+#[test]
+fn test_5() {
+    let buses = vec![3];
+    let passengers = vec![4];
+    let capacity = 1;
+    assert_eq!(latest_time_catch_the_bus(buses, passengers, capacity), 3);
+}
+
+#[test]
+fn test_6() {
+    let buses = vec![2, 3];
+    let passengers = vec![3, 2];
+    let capacity = 2;
+    assert_eq!(latest_time_catch_the_bus(buses, passengers, capacity), 1);
+}
+
+#[test]
+fn test_7() {
+    let buses = vec![18, 8, 3, 12, 9, 2, 7, 13, 20, 5];
+    let passengers = vec![13, 10, 8, 4, 12, 14, 18, 19, 5, 2, 30, 34];
+    let capacity = 1;
+    assert_eq!(latest_time_catch_the_bus(buses, passengers, capacity), 11);
 }
