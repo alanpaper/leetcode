@@ -1,7 +1,7 @@
 // use std::collections::HashMap;
 mod tree_node;
 
-mod three_sum;
+mod latest_time_catch_the_bus;
 
 // mod solve;
 // // Define a tuple struct
