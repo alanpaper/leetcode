@@ -1,7 +1,7 @@
 // use std::collections::HashMap;
 mod tree_node;
 
-mod longest_continuous_substring;
+mod count_special_numbers;
 
 // mod solve;
 // // Define a tuple struct
