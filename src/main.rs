@@ -1,7 +1,7 @@
 // use std::collections::HashMap;
 mod tree_node;
 
-mod latest_time_catch_the_bus;
+mod longest_continuous_substring;
 
 // mod solve;
 // // Define a tuple struct
