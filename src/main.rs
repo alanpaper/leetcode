@@ -1,7 +1,7 @@
 // use std::collections::HashMap;
 mod tree_node;
 
-mod count_special_numbers;
+mod num_buses_to_destination;
 
 // mod solve;
 // // Define a tuple struct
