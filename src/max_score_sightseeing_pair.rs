@@ -7,7 +7,7 @@ pub fn max_score_sightseeing_pair(values: Vec<i32>) -> i32 {
     let mut max = 0;
     for i in 0..values.len() {
         ans = ans.max(max + values[i] - (i as i32));
-        max = max.max(values[i] + (i as i32))
+        max = max.max(values[i] + (i as i32));
     }
     ans
 }
