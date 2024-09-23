@@ -1,7 +1,7 @@
 // use std::collections::HashMap;
 mod tree_node;
 
-mod edge_score;
+mod find_judge;
 
 // mod solve;
 // // Define a tuple struct
