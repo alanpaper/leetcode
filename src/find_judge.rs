@@ -6,8 +6,43 @@
 // 只有一个人同时满足属性 1 和属性 2 。
 // 给你一个数组 trust ，其中 trust[i] = [ai, bi] 表示编号为 ai 的人信任编号为 bi 的人。
 // 如果小镇法官存在并且可以确定他的身份，请返回该法官的编号；否则，返回 -1 。
+#[derive(Clone, Debug)]
+struct Graph {
+    pub in_degree: i32,
+    pub out_degree: i32,
+}
 
-pub fn find_judge(n: i32, trust: Vec<Vec<i32>>) -> i32 {}
+impl Graph {
+    fn new(in_degree: i32, out_degree: i32) -> Self {
+        Graph {
+            in_degree,
+            out_degree,
+        }
+    }
+}
+
+// 图的出度和入度模拟
+pub fn find_judge(n: i32, trust: Vec<Vec<i32>>) -> i32 {
+    if n == 1 && trust.is_empty() {
+        return 1;
+    }
+    let graph = Graph::new(0, 0);
+    let mut ans = vec![graph; n as usize + 1];
+    for t in trust {
+        let _in = t[0];
+        let _out = t[1];
+        let cur_in = ans[_in as usize].clone();
+        let cur_out = ans[_out as usize].clone();
+        ans[_out as usize] = Graph::new(cur_out.in_degree + 1, cur_out.out_degree);
+        ans[_in as usize] = Graph::new(cur_in.in_degree, cur_out.out_degree + 1);
+    }
+    for a in ans.iter().enumerate() {
+        if a.1.in_degree == n - 1 && a.1.out_degree == 0 {
+            return a.0 as i32;
+        }
+    }
+    -1
+}
 
 #[test]
 fn test_1() {
