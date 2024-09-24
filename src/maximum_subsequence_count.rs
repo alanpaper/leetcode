@@ -5,13 +5,8 @@
 /// 子序列 指的是将一个字符串删除若干个字符后（也可以不删除），剩余字符保持原本顺序得到的字符串。
 
 pub fn maximum_subsequence_count(text: String, pattern: String) -> i64 {
-
-  let mut one_total = 0;
-  let mut two_total = 0;
-
-  
-
-
+    let mut one_total = 0;
+    let mut two_total = 0;
 }
 
 #[test]
