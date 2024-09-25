@@ -1,5 +1,4 @@
 use std::collections::HashSet;
-
 /// 2306. 公司命名
 /// 给你一个字符串数组 ideas 表示在公司命名过程中使用的名字列表。公司命名流程如下：
 /// 从 ideas 中选择 2 个 不同 名字，称为 ideaA 和 ideaB 。
