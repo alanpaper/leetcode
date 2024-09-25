@@ -1,7 +1,7 @@
 // use std::collections::HashMap;
 mod tree_node;
 
-mod maximum_subsequence_count;
+mod distinct_names;
 
 // mod solve;
 // // Define a tuple struct
