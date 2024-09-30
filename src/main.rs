@@ -1,7 +1,7 @@
 // use std::collections::HashMap;
 mod tree_node;
 
-mod difference_of_sum;
+mod seat_manager;
 
 // mod solve;
 // // Define a tuple struct
