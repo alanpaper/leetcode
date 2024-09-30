@@ -6,7 +6,6 @@ use std::collections::HashSet;
 /// 如果得到的两个新名字 都 不在 ideas 中，那么 ideaA ideaB（串联 ideaA 和 ideaB ，中间用一个空格分隔）是一个有效的公司名字。
 /// 否则，不是一个有效的名字。
 /// 返回 不同 且有效的公司名字的数目。
-
 pub fn distinct_names(ideas: Vec<String>) -> i64 {
     let mut name_set = HashSet::new();
     let mut ans_set = HashSet::new();
