@@ -6,7 +6,25 @@
 /// 注意：两个整数 x 和 y 的绝对差定义为 |x - y| 。
 
 pub fn difference_of_sum(nums: Vec<i32>) -> i32 {
-  
+    let mut total = 0;
+    let mut sum = 0;
+    for n in nums {
+        total += n;
+        sum += sum_number(n);
+    }
+    (total - sum).abs()
+}
+
+fn sum_number(num: i32) -> i32 {
+    let mut sum = 0;
+    let mut num = num;
+    while num > 0 {
+        let remainder = num % 10;
+        sum += remainder;
+        num -= remainder;
+        num /= 10;
+    }
+    sum
 }
 
 #[test]
