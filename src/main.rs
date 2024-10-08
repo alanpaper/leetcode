@@ -1,7 +1,7 @@
 // use std::collections::HashMap;
 mod tree_node;
 
-mod time_required_to_buy;
+mod dest_city;
 
 // mod solve;
 // // Define a tuple struct
