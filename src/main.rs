@@ -1,7 +1,7 @@
 // use std::collections::HashMap;
 mod tree_node;
 
-mod difference_of_sum;
+mod min_speed_on_time;
 
 // mod solve;
 // // Define a tuple struct
