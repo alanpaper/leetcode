@@ -1,7 +1,7 @@
 // use std::collections::HashMap;
 mod tree_node;
 
-mod nth_person_gets_nth_seat;
+mod minimum_time;
 
 // mod solve;
 // // Define a tuple struct
