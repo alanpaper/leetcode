@@ -1,7 +1,7 @@
 // use std::collections::HashMap;
 mod tree_node;
 
-mod number_of_pairs;
+mod can_complete_circuit;
 
 // mod solve;
 // // Define a tuple struct
