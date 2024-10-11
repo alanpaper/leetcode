@@ -33,7 +33,7 @@ pub fn number_of_pairs_ii(nums1: Vec<i32>, nums2: Vec<i32>, k: i32) -> i64 {
         loop {
             let num = m.0 * k * n;
             if nums1_map.contains_key(&num) {
-                total += m.1 * nums1_map.get(&num).unwrap()
+                total += m.1 * nums1_map.get(&num).unwrap();
             }
             if num > max {
                 break;
