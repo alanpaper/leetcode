@@ -6,13 +6,8 @@
 /// 返回能够满足让所有学生保持开心的分组方法的数目。
 ///
 pub fn count_ways(nums: Vec<i32>) -> i32 {
-
-  let mut nums = nums.clone();
-  nums.sort();
-
-  
-
-
+    let mut nums = nums.clone();
+    nums.sort();
 }
 
 #[test]
