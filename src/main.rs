@@ -1,7 +1,7 @@
 // use std::collections::HashMap;
 mod tree_node;
 
-mod distance_between_bus_stops;
+mod sorted_squares;
 
 // mod solve;
 // // Define a tuple struct
