@@ -1,7 +1,7 @@
 // use std::collections::HashMap;
 mod tree_node;
 
-mod sorted_squares;
+mod maximum_length;
 
 // mod solve;
 // // Define a tuple struct

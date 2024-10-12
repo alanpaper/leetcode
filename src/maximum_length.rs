@@ -116,3 +116,24 @@ fn test_3() {
         3
     )
 }
+
+/// 3176. 求出最长好子序列 I
+/// 给你一个整数数组 nums 和一个 非负 整数 k 。
+/// 如果一个整数序列 seq 满足在下标范围 [0, seq.length - 2] 中 最多只有 k 个下标 i 满足 seq[i] != seq[i + 1] ，
+/// 那么我们称这个整数序列为 好 序列。
+/// 请你返回 nums 中 好子序列的最长长度
+/// 子序列:是可以通过从另一个数组删除或不删除某些元素，但不更改其余元素的顺序得到的数组。
+/// 
+pub fn maximum_length_i(nums: Vec<i32>, k: i32) -> i32 {
+    0
+}
+
+#[test]
+fn test_i_1() {
+    assert_eq!(maximum_length_i(vec![1, 2, 1, 1, 3], 2), 4)
+}
+
+#[test]
+fn test_i_2() {
+    assert_eq!(maximum_length_i(vec![1, 2, 3, 4, 5, 1], 0), 2)
+}
