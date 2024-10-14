@@ -1,7 +1,7 @@
 // use std::collections::HashMap;
 mod tree_node;
 
-mod maximum_length;
+mod two_egg_drop;
 
 // mod solve;
 // // Define a tuple struct
