@@ -1,7 +1,7 @@
 // use std::collections::HashMap;
 mod tree_node;
 
-mod get_winner;
+mod max_height_of_triangle;
 
 // mod solve;
 // // Define a tuple struct

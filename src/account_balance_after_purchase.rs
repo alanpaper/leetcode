@@ -11,6 +11,7 @@ pub fn account_balance_after_purchase(purchase_amount: i32) -> i32 {
 fn test_1() {
     assert_eq!(account_balance_after_purchase(9), 90);
 }
+
 #[test]
 fn test_2() {
     assert_eq!(account_balance_after_purchase(15), 80);
