@@ -1,7 +1,7 @@
 // use std::collections::HashMap;
 mod tree_node;
 
-mod longest_equal_subarray;
+mod find_indices;
 
 // mod solve;
 // // Define a tuple struct
