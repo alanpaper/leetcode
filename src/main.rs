@@ -1,7 +1,7 @@
 // use std::collections::HashMap;
 mod tree_node;
 
-mod find_indices;
+mod minimum_average;
 
 // mod solve;
 // // Define a tuple struct
