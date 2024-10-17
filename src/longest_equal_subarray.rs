@@ -7,7 +7,7 @@ pub fn longest_equal_subarray(nums: Vec<i32>, k: i32) -> i32 {
     let mut pos_lists = vec![vec![]; nums.len() + 1];
     for (i, &x) in nums.iter().enumerate() {
         let pos = &mut pos_lists[x as usize];
-        pos.push(i - pos.len());
+        pos.push(i);
     }
 
     let mut ans = 0;
@@ -21,7 +21,7 @@ pub fn longest_equal_subarray(nums: Vec<i32>, k: i32) -> i32 {
             ans = ans.max(right - left + 1);
         }
     }
-    0
+    ans as i32
 }
 
 #[test]
