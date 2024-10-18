@@ -1,7 +1,7 @@
 // use std::collections::HashMap;
 mod tree_node;
 
-mod number_of_permutations;
+mod is_array_special;
 
 // mod solve;
 // // Define a tuple struct
