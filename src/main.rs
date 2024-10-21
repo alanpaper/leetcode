@@ -1,7 +1,7 @@
 // use std::collections::HashMap;
 mod tree_node;
 
-mod smallest_range_i;
+mod longest_palindrome;
 
 // mod solve;
 // // Define a tuple struct
