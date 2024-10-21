@@ -1,6 +1,4 @@
 /// 3038. 相同分数的最大操作数目
-///
-
 pub fn max_operations(nums: Vec<i32>) -> i32 {
     let score = nums[0] + nums[1];
     let mut ans = 1;
