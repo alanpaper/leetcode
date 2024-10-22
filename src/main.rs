@@ -1,7 +1,7 @@
 // use std::collections::HashMap;
 mod tree_node;
 
-mod count_complete_day_pairs;
+mod compressed_string;
 
 // mod solve;
 // // Define a tuple struct
