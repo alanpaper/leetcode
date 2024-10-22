@@ -23,3 +23,24 @@ fn test_1() {
 fn test_2() {
     assert_eq!(count_complete_day_pairs(vec![72, 48, 24, 3]), 3)
 }
+
+/// 3185. 构成整天的下标对数目II
+pub fn count_complete_day_pairs_i(hours: Vec<i32>) -> i64 {
+    let mut ans = 0;
+    let mut map = vec![0; 24];
+    for h in hours {
+        ans += map[((24 - (h % 24)) % 24) as usize];
+        map[(h % 24) as usize] += 1;
+    }
+    ans
+}
+
+#[test]
+fn test_i1() {
+    assert_eq!(count_complete_day_pairs_i(vec![12, 12, 30, 24, 24]), 2)
+}
+
+#[test]
+fn test_i2() {
+    assert_eq!(count_complete_day_pairs_i(vec![72, 48, 24, 3]), 3)
+}
