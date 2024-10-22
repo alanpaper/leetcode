@@ -1,7 +1,7 @@
 // use std::collections::HashMap;
 mod tree_node;
 
-mod longest_palindrome;
+mod count_complete_day_pairs;
 
 // mod solve;
 // // Define a tuple struct
