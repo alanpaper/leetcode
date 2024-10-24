@@ -1,7 +1,7 @@
 // use std::collections::HashMap;
 mod tree_node;
 
-mod compressed_string;
+mod find_winning_player;
 
 // mod solve;
 // // Define a tuple struct
