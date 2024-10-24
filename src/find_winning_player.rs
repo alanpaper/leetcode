@@ -13,23 +13,27 @@ use std::collections::HashMap;
 pub fn find_winning_player(skills: Vec<i32>, k: i32) -> i32 {
     let mut wanning = HashMap::new();
     let mut max = 0;
-    let mut current = skills[0];
+    let mut current = 0;
     for i in 1..skills.len() {
-        max = max.max(skills[i]);
-        current = current.max(skills[i]);
+        if skills[max] < skills[i] {
+            max = i;
+        }
+        if skills[current] < skills[i] {
+            current = i;
+        }
         wanning
             .entry(current)
             .and_modify(|f| {
                 *f += 1;
             })
             .or_insert(1);
-        if let Some(w) = wanning.get(&current.max(skills[i])) {
+        if let Some(w) = wanning.get(&current) {
             if *w == k {
-                return *w;
+                return current as i32;
             }
         }
     }
-    return max;
+    return max as i32;
 }
 
 #[test]
@@ -40,4 +44,9 @@ fn test_1() {
 #[test]
 fn test_2() {
     assert_eq!(find_winning_player(vec![2, 5, 4], 3), 1);
+}
+
+#[test]
+fn test_3() {
+    assert_eq!(find_winning_player(vec![3, 10, 19, 2, 16, 14, 8, 17], 5), 2);
 }
