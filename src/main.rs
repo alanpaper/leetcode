@@ -1,7 +1,7 @@
 // use std::collections::HashMap;
 mod tree_node;
 
-mod find_winning_player;
+mod max_total_reward;
 
 // mod solve;
 // // Define a tuple struct
