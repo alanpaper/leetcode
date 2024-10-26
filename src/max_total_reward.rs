@@ -7,10 +7,6 @@
 /// 以整数形式返回执行最优操作能够获得的 最大 总奖励。
 
 pub fn max_total_reward(reward_values: Vec<i32>) -> i32 {
-
-  
-
-
   0
 }
 
