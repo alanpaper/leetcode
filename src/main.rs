@@ -1,7 +1,7 @@
 // use std::collections::HashMap;
 mod tree_node;
 
-mod rob;
+mod find_redundant_connection;
 
 // mod solve;
 // // Define a tuple struct
