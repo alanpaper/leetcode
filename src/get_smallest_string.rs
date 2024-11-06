@@ -8,7 +8,7 @@ pub fn get_smallest_string(s: String) -> String {
 
     let list = s.chars().into_iter().collect::<Vec<char>>();
 
-    for i in 0..(list.len() - 1) {}
+    for i in 0..(list.len() - 1) {} 
 
     ans
 }

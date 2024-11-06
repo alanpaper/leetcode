@@ -1,7 +1,7 @@
 // use std::collections::HashMap;
 mod tree_node;
 
-mod get_smallest_string;
+mod max_energy_boost;
 
 // mod solve;
 // // Define a tuple struct
