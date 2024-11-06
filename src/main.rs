@@ -1,7 +1,7 @@
 // use std::collections::HashMap;
 mod tree_node;
 
-mod max_energy_boost;
+mod min_changes;
 
 // mod solve;
 // // Define a tuple struct
