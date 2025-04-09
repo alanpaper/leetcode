@@ -1,7 +1,7 @@
 // use std::collections::HashMap;
 mod tree_node;
 
-mod row_and_maximum_ones;
+mod can_partition;
 
 // mod solve;
 // // Define a tuple struct
