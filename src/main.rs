@@ -1,7 +1,7 @@
 // use std::collections::HashMap;
 mod tree_node;
 
-mod kth_character;
+mod is_valid;
 
 // mod solve;
 // // Define a tuple struct
