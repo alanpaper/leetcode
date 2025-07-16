@@ -1,8 +1,5 @@
 // use std::collections::HashMap;
-mod tree_node;
-
-mod is_valid;
-
+mod leetcode;
 // mod solve;
 // // Define a tuple struct
 // #[derive(Debug)]
