@@ -4,5 +4,5 @@
 /// 由于答案可能很大，请将结果对 109 + 7 取余后返回。
 
 pub fn num_subseq(nums: Vec<i32>, target: i32) -> i32 {
-
+    0
 }
