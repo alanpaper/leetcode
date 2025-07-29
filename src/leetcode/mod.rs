@@ -5,5 +5,5 @@
 // mod jump;
 // mod unique_paths;
 
-mod simplify_path;
+mod combine;
 

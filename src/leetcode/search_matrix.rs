@@ -1,39 +1,21 @@
-use std::cmp::Ordering;
+
 /// 74. 搜索二维矩阵
 /// 给你一个满足下述两条属性的 m x n 整数矩阵：
 /// 每行中的整数从左到右按非严格递增顺序排列。
 /// 每行的第一个整数大于前一行的最后一个整数。
 /// 给你一个整数 target ，如果 target 在矩阵中，返回 true；否则，返回 false。
 pub fn search_matrix(matrix: Vec<Vec<i32>>, target: i32) -> bool {
-    let mut top = 0;
-    let mut bottom = matrix.len() - 1;
-    if matrix[0][0] > target {
-        return false;
-    }
-
-    while top < bottom {
-        let mid = (top + bottom) / 2;
-        match matrix[mid as usize][0].cmp(&target) {
-            Ordering::Equal => {
-                return true;
-            }
-            Ordering::Less => top = mid + 1,
-            Ordering::Greater => bottom = mid - 1,
-        }
-    }
-    if top > 0 {
-        top -= 1;
-    }
-    let mut left = 0;
-    let mut right = matrix[top as usize].len() - 1;
-    while left <= right {
-        let mid = (left + right) / 2;
-        match matrix[top as usize][mid].cmp(&target) {
-            Ordering::Equal => {
-                return true;
-            }
-            Ordering::Less => left = mid + 1,
-            Ordering::Greater => right = mid - 1,
+    let nums = matrix.concat();
+    let mut left_index = 0;
+    let mut right_index = nums.len();
+    while left_index < right_index {
+        let middle_index = (right_index + left_index) / 2;
+        if nums[middle_index] == target {
+            return true;
+        } else if nums[middle_index] < target {
+            left_index = middle_index + 1;
+        } else {
+            right_index = middle_index;
         }
     }
     false
@@ -64,7 +46,7 @@ fn test_3() {
 
 #[test]
 fn test_4() {
-    let matrix = vec![vec![1, 1]];
+    let matrix = vec![vec![1, 2]];
     let target = 0;
     assert_eq!(search_matrix(matrix, target), false);
 }
@@ -74,6 +56,13 @@ fn test_5() {
     let matrix = vec![vec![1], vec![3]];
     let target = 2;
     assert_eq!(search_matrix(matrix, target), false);
+}
+
+#[test]
+fn test_7() {
+    let matrix = vec![vec![1]];
+    let target = 1;
+    assert_eq!(search_matrix(matrix, target), true);
 }
 
 #[test]
