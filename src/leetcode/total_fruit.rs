@@ -1,8 +1,5 @@
 use std::collections::{HashMap};
-
-
 /// 904. 水果成篮
-
 pub fn total_fruit(fruits: Vec<i32>) -> i32 {
 
     let mut total = 0;
@@ -47,4 +44,29 @@ fn test_2() {
 fn test_3() {
     let fruits = vec![1,2,3,2,2];
     assert_eq!(total_fruit(fruits), 4);
+}
+
+/// 3477. 水果成篮 II
+/// 
+pub fn num_of_unplaced_fruits(fruits: Vec<i32>, baskets: Vec<i32>) -> i32 {
+    let mut baskets = baskets.clone();
+    for i in 0..fruits.len() {
+        for j in 0..baskets.len() {
+            if baskets[j] >= fruits[i] { 
+                baskets[j] = -1;
+                break;
+            }
+        }
+    }
+    baskets.iter().filter(|f| **f!= -1).collect::<Vec<_>>().len() as i32
+}
+
+
+#[test]
+fn test_11() {
+    assert_eq!(num_of_unplaced_fruits(vec![4,2,5], vec![3,5,4]),1);
+}
+#[test]
+fn test_12() {
+    assert_eq!(num_of_unplaced_fruits(vec![3,6,1], vec![6,4,7]),0);
 }
