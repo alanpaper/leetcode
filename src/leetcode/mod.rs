@@ -5,4 +5,4 @@
 // mod jump;
 // mod unique_paths;
 
-mod max_total_fruits;
+mod remove_subfolders;
