@@ -5,5 +5,4 @@
 // mod jump;
 // mod unique_paths;
 
-mod total_fruit;
-
+mod max_total_fruits;
