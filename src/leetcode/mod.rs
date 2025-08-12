@@ -5,4 +5,4 @@
 // mod jump;
 // mod unique_paths;
 
-mod remove_subfolders;
+mod number_of_ways;
