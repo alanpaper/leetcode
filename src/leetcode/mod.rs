@@ -5,4 +5,4 @@
 // mod jump;
 // mod unique_paths;
 
-mod number_of_ways;
+mod lfu;
