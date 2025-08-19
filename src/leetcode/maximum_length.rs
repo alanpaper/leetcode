@@ -1,4 +1,4 @@
-use std::collections::HashMap;
+use std::collections::{HashMap, VecDeque};
 
 /// 2981. 寻找出出现至少三次的最长特殊子字符串 1
 /// 给你一个仅由小写英文字母组成的字符串 s 。
@@ -125,7 +125,33 @@ fn test_3() {
 /// 子序列:是可以通过从另一个数组删除或不删除某些元素，但不更改其余元素的顺序得到的数组。
 /// 
 pub fn maximum_length_i(nums: Vec<i32>, k: i32) -> i32 {
-    0
+
+    let mut map = HashMap::new();
+    for i in 0..nums.len() {
+        map.entry(nums[i]).and_modify(|f| { *f += 1;}).or_insert(1);
+    }
+    let mut max = 0;
+    for m in map.iter() {
+        max = max.max(*m.1);
+    }
+
+    if nums.len() - max < k as usize {
+        return nums.len() as i32;
+    }
+
+    if k == 0 {
+        return max as i32;
+    }
+
+    if max == 1 {
+        if k > nums.len() as i32 {
+            return nums.len() as i32;
+        } else {
+            return k + 1;
+        }
+    }
+
+    max as i32 + 1
 }
 
 #[test]
@@ -137,3 +163,81 @@ fn test_i_1() {
 fn test_i_2() {
     assert_eq!(maximum_length_i(vec![1, 2, 3, 4, 5, 1], 0), 2)
 }
+
+#[test]
+fn test_i_3() {
+    assert_eq!(maximum_length_i(vec![2,5], 1), 2)
+}
+#[test]
+fn test_i_4() {
+    assert_eq!(maximum_length_i(vec![2,5], 2), 2)
+}
+
+#[test]
+fn test_i_5() {
+    assert_eq!(maximum_length_i(vec![1, 14, 1], 3), 3)
+}
+
+
+/// 3202. 找出有效子序列的最大长度
+/// 
+
+pub fn maximum_length_ii(nums: Vec<i32>, k: i32) -> i32 {
+    let mut ans = 2;
+
+    for i in 0..nums.len()-1 {
+        for j in (i+1)..nums.len() {
+            let mut index = 0;
+            let mut queue = VecDeque::new();
+            queue.push_back(nums[i]);
+            queue.push_back(nums[j]);
+            for _ in j..nums.len()-1 {
+                let last_len = queue.len() - 1;
+                let last_two = last_len - 1;
+                if (queue[last_len] + queue[last_two]) % k == (queue[last_len] + nums[j+index+1]) % k {
+                    queue.push_back(nums[j+index+1]);
+                }
+                index += 1;
+            }
+            let mut m = i as i32 - 2;
+            while m > -1 {
+                if (queue[0] + queue[1]) % k == (queue[0] + nums[m as usize]) % k {
+                    queue.push_front(nums[m as usize]);
+                }
+                m -= 1;
+            }
+            ans = ans.max(queue.len());
+        }
+    }
+   ans as i32
+}
+
+
+#[test]
+fn test_maximum_length_ii() {
+    assert_eq!(maximum_length_ii(vec![1,2,3,4,5], 2), 5)
+}
+
+#[test]
+fn test_maximum_length_ii_1() {
+    assert_eq!(maximum_length_ii(vec![1,4,2,3,1,4], 3), 4)
+}
+
+#[test]
+fn test_maximum_length_ii_2() {
+    assert_eq!(maximum_length_ii(vec![3,2,1,9,1], 6), 4)
+}
+
+#[test]
+fn test_maximum_length_ii_3() {
+    assert_eq!(maximum_length_ii(vec![1,7,9,10,8,7,10], 6), 4)
+}
+
+
+
+#[test]
+fn test_maximum_length_ii_4() {
+    assert_eq!(maximum_length_ii(vec![2,4,7,1,2,6,7], 8), 4)
+}
+
+
