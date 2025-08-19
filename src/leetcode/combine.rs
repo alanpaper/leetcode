@@ -5,8 +5,20 @@
 pub fn combine(n: i32, k: i32) -> Vec<Vec<i32>> {
 
     let mut ans = vec![];
-    // let path = vec![];
 
+    let mut path = vec![];
+    fn dfs(start: i32, n: i32, k: i32, path: &mut Vec<i32>, ans: &mut Vec<Vec<i32>>) {
+        if path.len() == k as usize {
+            ans.push(path.to_vec());
+            return;
+        }
+        for i in start..=n {
+            path.push(i);
+            dfs(i + 1, n, k, path, ans);
+            path.pop();
+        }
+    }
+    dfs(1, n, k, &mut path, &mut ans);
     ans
 }
 
