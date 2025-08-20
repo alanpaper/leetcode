@@ -5,4 +5,4 @@
 // mod jump;
 // mod unique_paths;
 
-mod combine;
+mod k_smallest_pairs;
