@@ -5,4 +5,4 @@
 // mod jump;
 // mod unique_paths;
 
-mod count_squares;
+mod minimum_area;
