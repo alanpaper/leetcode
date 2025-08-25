@@ -24,13 +24,6 @@ pub fn minimum_area(grid: Vec<Vec<i32>>) -> i32 {
         }
     }
 
-    if left_max - left_min == 0 {
-        return (top_max - top_min) as i32 + 1;
-    }
-    if top_max - top_min == 0 {
-        return (left_max - left_min) as i32 + 1;
-    }
-
     let width = left_max - left_min + 1;
     let height = top_max - top_min + 1;
 
