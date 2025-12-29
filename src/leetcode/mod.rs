@@ -5,4 +5,4 @@
 // mod jump;
 // mod unique_paths;
 
-mod find_diagonal_order;
+mod people_aware_of_secret;
